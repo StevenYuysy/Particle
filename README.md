@@ -29,8 +29,8 @@ var particle = new Particle({
 
 ### options
 
-|options|Description|
-|-|-|
+|Options|Description|
+|-------|-----------|
 |selector(necessary)|The css selector of canvas.|
 |url(necessary)|The url of the image.|
 |cols|The number of the columns that devide images.|
