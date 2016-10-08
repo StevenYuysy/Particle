@@ -1,5 +1,5 @@
 # particle suspension
-![](https://travis-ci.org/StevenYuysy/Particle#)
+![](https://travis-ci.org/StevenYuysy/Particle.svg?branch=master)
 
 A particle suspension by JavaScript canvas.
 
@@ -15,16 +15,16 @@ Inspired by [ISUX](https://isux.tencent.com/canvas-particle-animation.html)
 
 ```javascript
 var particle = new Particle({
-   selector: '#canvas',
-   url: 'isux.png',
-   startX: 250,
-   startY: 500,
-   imgX: 100,
-   imgY: 100,
-   delay: 100,
-   duration: 2000,
-   offset: 1,
-   easing: 'easeInOutQuad'
+    selector: '#canvas',
+    url: 'isux.png',
+    startX: 250,
+    startY: 500,
+    imgX: 100,
+    imgY: 100,
+    delay: 100,
+    duration: 2000,
+    offset: 1,
+    easing: 'easeInOutQuad'
 });
 ```
 
