@@ -1,0 +1,31 @@
+{
+  "name": "particle",
+  "version": "0.0.0",
+  "description": "a particle suspension by JavaScript Canvas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StevenYuysy/Particle.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Canvas",
+    "particle"
+  ],
+  "author": "Steven",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StevenYuysy/Particle/issues"
+  },
+  "homepage": "https://github.com/StevenYuysy/Particle#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0"
+  }
+}
