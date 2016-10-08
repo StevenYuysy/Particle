@@ -7,6 +7,8 @@ Inspired by [ISUX](https://isux.tencent.com/canvas-particle-animation.html)
 
 ### demo
 
+[demo](https://stevenyuysy.github.io/Particle/demo/)
+
 ### usage
 
 ```html
@@ -28,7 +30,7 @@ var particle = new Particle({
 });
 ```
 
-### options
+### Options
 
 |Options|Description|
 |-------|-----------|
@@ -45,7 +47,7 @@ var particle = new Particle({
 |easing|The ease of the animation. Currently support `easeInOutQuad`, `easeInOutBack`.|
 |offset|The offset of the particles.|
 
-### development
+### Development
 
 ```bash
 git clone https://github.com/StevenYuysy/Particle.git
@@ -53,6 +55,6 @@ npm install
 gulp connect
 ```
 
-### license
+### License
 
 MIT
