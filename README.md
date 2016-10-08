@@ -49,7 +49,7 @@ var particle = new Particle({
 ```bash
 git clone https://github.com/StevenYuysy/Particle.git
 npm install
-gulp
+gulp connect
 ```
 
 ### license
