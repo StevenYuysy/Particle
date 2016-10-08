@@ -5,4 +5,8 @@ gulp.task('connect', function() {
     connect.server();
 });
 
-gulp.task('default', ['connect']);
+gulp.task('close', function() {
+    connect.serverClose();
+});
+
+gulp.task('default', ['connect', 'close']);
