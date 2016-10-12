@@ -7,6 +7,7 @@
 
     var canvas;
     var animateID;
+    var timerID;
     var image = {};
     var particles = [];
     var imageState = false;
@@ -42,8 +43,6 @@
         options.easing = opts.easing || options.easing;
         options.offset = opts.offset || options.offset;
 
-        this.animated = false;
-
         var img = new Image();
         img.onload = function() {
             imageState = true;
@@ -72,7 +71,7 @@
     }
 
     /**
-     * Calc the cols and rows pixles, push them to `particles`.
+     * Calculate the columns and rows pixles, push them to `particles`.
      * @private
      */
 
@@ -111,23 +110,33 @@
     }
 
     /**
+     * Clear current canvas action.
      * @private
-     * Cheking the animation time and cancel it.
      */
 
-    function timer() {
-        setTimeout(function(){
-            // console.log('finish');
-            cancelAnimationFrame(animateID);
-            particles.forEach(function(ele) {
-                ele.count = 0;
-                ele.currTime = 0;
-            });
-            animation = false;
-        },options.delay*20 + options.duration);
+    function clear() {
+        cancelAnimationFrame(animateID);
+        particles.forEach(function(ele) {
+            ele.count = 0;
+            ele.currTime = 0;
+        });
+        animation = false;
     }
 
     /**
+     * Cheking the animation time and cancel it.
+     * @private
+     */
+
+    function timer() {
+        timerID = setTimeout(function(){
+            // console.log('finish');
+            clear();
+        }, options.delay*20 + options.duration);
+    }
+
+    /**
+     * Anmiate canvas particle suspection core function.
      * @private
      */
 
@@ -169,6 +178,7 @@
      */
 
     Particle.prototype.draw = function(ease) {
+        if (animation) return;
         if (ease) options.easing = ease;
         if (imageState) {
             if (!particles.length) calc();
@@ -179,7 +189,7 @@
     };
 
     /**
-     * Animating the canvas
+     * @return {Boolean} animation - canvas animation.
      */
 
     Particle.prototype.animate = function() {
@@ -187,13 +197,19 @@
     };
 
     /**
-     * Reset the image on canvas
+     * Reset the image on canvas.
      */
     Particle.prototype.setImg = function () {
 
     };
 
+    /**
+     * Clear the canvas animation and timer.
+     */
+
     Particle.prototype.clear = function() {
+        if (animation) clearTimeout(timerID);
+        clear();
         canvas.ctx.clearRect(0, 0, canvas.width, canvas.height);
     };
 
